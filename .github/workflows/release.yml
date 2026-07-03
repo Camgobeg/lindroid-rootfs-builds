@@ -70,7 +70,7 @@ jobs:
         run: mkdir -p /tmp/buildd-results
 
       - name: Pull container
-        run: docker pull registry.lindroid.org/lindroid/rootfs-builder:next-amd64
+        run: docker pull registry.lindroid.org/lindroid/rootfs-builder:current-amd64
 
       - name: Start systemd container
         run: |
@@ -84,7 +84,7 @@ jobs:
             -v /dev:/host-dev \
             -v ${PWD}:/buildd/sources \
             --security-opt seccomp:unconfined \
-            registry.lindroid.org/lindroid/rootfs-builder:next-amd64 \
+            registry.lindroid.org/lindroid/rootfs-builder:current-amd64 \
             /sbin/init)" >> $GITHUB_ENV
 
 
